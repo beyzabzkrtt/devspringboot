@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c26a588c-c710-4f4b-a9db-0f115930b6cf" name="Changes" comment="" />
+    <list default="true" id="c26a588c-c710-4f4b-a9db-0f115930b6cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../02-spring-boot-spring-core/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-spring-boot-spring-core/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02-spring-boot-spring-core/01-constructor-injection/src/main/java/com/luv2code/springcoredemo/common/TrackCoach.java" beforeDir="false" afterPath="$PROJECT_DIR$/../02-spring-boot-spring-core/01-constructor-injection/src/main/java/com/luv2code/springcoredemo/common/TrackCoach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02-spring-boot-spring-core/01-constructor-injection/src/main/java/com/luv2code/springcoredemo/rest/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../02-spring-boot-spring-core/01-constructor-injection/src/main/java/com/luv2code/springcoredemo/rest/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-crud-demo-student/src/main/java/com/luv2code/cruddemo/CruddemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/01-crud-demo-student/src/main/java/com/luv2code/cruddemo/CruddemoApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2mtA6p2WoPh8djCqSuZ0nnnQGOM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,9 +32,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/beboz/dev-spring-boot/04-spring-boot-rest-demo/01-spring-boot-rest-crud"
+    "last_opened_file_path": "C:/Users/beboz/dev-spring-boot/03-spring-boot-hibernate-jpa-crud"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
