@@ -6,35 +6,29 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class DemoSecurityConfig {
 
+
     @Bean
-    public InMemoryUserDetailsManager userDetailsManager() {
+    public UserDetailsManager userDetailsManager(DataSource dataSource){
 
-        UserDetails john = User.builder()
-                .username("john")
-                .password("{noop}test1234")
-                .roles("EMPLOYEE")
-                .build();
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+        jdbcUserDetailsManager.setUsersByUsernameQuery(
+                "select user_id,pw,active from members where user_id=?"
+        );
+        jdbcUserDetailsManager.setAuthoritiesByUsernameQuery(
+                "select user_id,role from roles where user_id=?"
+        );
 
-        UserDetails mary = User.builder()
-                .username("mary")
-                .password("{noop}test1234")
-                .roles("EMPLOYEE", "MANAGER")
-                .build();
-
-        UserDetails susan = User.builder()
-                .username("susan")
-                .password("{noop}test1234")
-                .roles("EMPLOYEE", "MANAGER", "ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(john, mary, susan);
+        return jdbcUserDetailsManager;
     }
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
@@ -59,3 +53,27 @@ public class DemoSecurityConfig {
         return http.build();
     }
 }
+
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsManager() {
+//
+//        UserDetails john = User.builder()
+//                .username("john")
+//                .password("{noop}test1234")
+//                .roles("EMPLOYEE")
+//                .build();
+//
+//        UserDetails mary = User.builder()
+//                .username("mary")
+//                .password("{noop}test1234")
+//                .roles("EMPLOYEE", "MANAGER")
+//                .build();
+//
+//        UserDetails susan = User.builder()
+//                .username("susan")
+//                .password("{noop}test1234")
+//                .roles("EMPLOYEE", "MANAGER", "ADMIN")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(john, mary, susan);
+//    }
